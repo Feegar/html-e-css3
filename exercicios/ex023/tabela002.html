@@ -12,14 +12,31 @@ body {
 table {
     width: 500px;
     border-collapse: collapse;
+    position: relative;
 }
 td, th {
     border: 1px solid black;
     padding: 10px;
    }
+
+   caption {
+    font-size: 1.5em;
+    font-weight: bold;
+    padding: 10px;
+    background-color: lightgray;
+   }
 thead, tfoot {
     background-color: gray;
     color: white;
+}
+thead tr th {
+    position: sticky;
+    top: -1px;
+    background-color: gray;
+
+}
+tbody tr:nth-child(even) {
+    background-color: lightgray;
 }
 td.num {
     text-align: right;
@@ -39,12 +56,22 @@ td.num {
       TFOOT
       TR, TD, TH
 
+      vou usar th para cabeçalho e td para dados, e vou usar a tag caption para colocar um título na tabela.
+      -
+       vou usar tambem scope="col" para indicar que a coluna é de cabeçalho e scope="row" para indicar que a linha é de cabeçalho.
+       não tem um efeito visual, mas é importante para acessibilidade e SEO.
+       -
+       para fazer o efeito de zebra, vou usar a pseudo-classe nth-child(even) ou nth-child(odd) para selecionar as linhas pares e ímpares e aplicar um background-color diferente.
+
+
     -->
+    
     <table>
+        <caption> População dos Estados Brasileiros </caption>
         <thead>
             <tr>
-                <th>Estado</th>
-                <th>População</th>
+                <th scope="col">Estado</th>
+                <th scope="col" style="width: 50px">População</th>
 
                 
         </thead>
@@ -54,31 +81,102 @@ td.num {
             <td>São Paulo</td>
             <td class="num">45.000.000</tdd>
         </tr>
+
         <tr>
             <td>Rio de Janeiro</td>
             <td class="num">17.000.000</td>
         </tr>
+
         <tr>
             <td>Minas Gerais</td>
             <td class="num">21.168.790</td>
         </tr>
+
         <tr>
             <td>Bahia</td>
             <td class="num">4.000.000</td>
         </tr>
+
         <tr>
             <td>Paraná</td>
             <td class="num">11.000.000</td>
         </tr>  
+
         <tr>
             <td>Rio Grande do Sul</td>
             <td class="num">10.000.000</td>
+        </tr>
+
+        <tr>
+            <td>Santa Catarina</td>
+            <td class="num">5.000.000</td>
+        </tr>
+
+        <tr>
+            <td>Goiás</td>
+            <td class="num">8.000.000</td>
+        </tr>
+
+        <tr>
+            <td>Pernambuco</td>
+            <td class="num">6.000.000</td>
+
+        </tr>
+        <tr>
+            <td>Ceará</td>
+            <td class="num">5.000.000</td> </tr>
+
+        <tr>
+            <td>Pará</td>
+            <td class="num">8.000.000</td>
+            </tr>
+
+            <tr>
+            <td>Amazonas</td>   
+            <td class="num">4.000.000</td>
+            </tr>
+
+            <tr>
+            <td>Espírito Santo</td> 
+            <td class="num">2.000.000</td>
+            </tr>
+
+            <tr>
+            <td>Paraíba</td>   
+            <td class="num">1.500.000</td>
+            </tr>
+
+            <tr>
+            <td>Rio Grande do Norte</td>    
+            <td class="num">3.000.000</td>
+            </tr>
+
+            <tr>
+            <td>Maranhão</td>
+            <td class="num">7.000.000</td>
+            </tr>
+
+            <tr>
+            <td>Piauí</td>  
+            <td class="num">3.000.000</td>
+            </tr>
+            
+            <tr>
+            <td>Alagoas</td>
+            <td class="num">2.000.000</td>
+            </tr>
+
+            <tr>
+                <td>Sergipe</td>
+                <td class="num">1.500.000</td>
+                </tr>
+
 
         </tbody>
         
         <tfoot>
 <tr>
-    <th>Total de Habitantes</th>
+    <th scope="row">Total de Habitantes</th>
     <td><strong>108.168.790</strong></td>
 </tr>
         </tfoot>
@@ -86,6 +184,26 @@ td.num {
         
     </table>
     
+    <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam odit suscipit non quae expedita nemo ducimus facere assumenda voluptas laborum impedit eos a labore delectus, maiores maxime, porro facilis reiciendis?Lorem ipsum, dolor sit amet consectetur adipisicing elit. Molestias saepe eius id. Dolorum ut repellendus ipsam iure impedit. Ab possimus rerum expedita odit, doloremque esse quod illo dolore accusamus optio!lorem ipsum dolor sit amet consectetur adipisicing elit.
+        lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum. Lorem ipsum dolor sit amet consectetur adipisicing elit.<p>
+             Quisquam, voluptatum.
+            lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.   Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam odit suscipit non quae expedita nemo ducimus facere assumenda voluptas laborum impedit eos a labore delectus, maiores maxime, porro facilis reiciendis?Lorem ipsum, dolor sit amet consectetur adipisicing elit. Molestias saepe eius id. Dolorum ut repellendus ipsam iure impedit. Ab possimus rerum expedita odit, doloremque esse quod illo dolore accusamus optio!lorem ipsum dolor sit amet consectetur adipisicing elit.
+        </p>
+        lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.
+        lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.  <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam odit suscipit non quae expedita nemo ducimus facere assumenda voluptas laborum impedit eos a labore delectus, maiores maxime, porro facilis reiciendis?Lorem ipsum, dolor sit amet consectetur adipisicing elit. Molestias saepe eius id. Dolorum ut repellendus ipsam iure impedit. Ab possimus rerum expedita odit, doloremque esse quod illo dolore accusamus optio!lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+        lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.
+        lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.   Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam odit suscipit non quae expedita nemo ducimus facere assumenda voluptas laborum impedit eos a labore delectus, maiores maxime, porro facilis reiciendis?Lorem ipsum, dolor sit amet consectetur adipisicing elit. Molestias saepe eius id. Dolorum ut repellendus ipsam iure impedit. <p>
+            Ab possimus rerum expedita odit, doloremque esse quod illo dolore accusamus optio!lorem ipsum dolor sit amet consectetur adipisicing elit.
+            lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.
+            lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.
+        </p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam odit suscipit non quae expedita nemo ducimus facere assumenda voluptas laborum impedit eos a labore delectus, maiores maxime, porro facilis reiciendis?Lorem ipsum, dolor sit amet consectetur adipisicing elit. Molestias saepe eius id.<p>
+             Dolorum ut repellendus ipsam iure impedit. Ab possimus rerum expedita odit, doloremque esse quod illo dolore accusamus optio!lorem ipsum dolor sit amet consectetur adipisicing elit.
+            lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.
+            lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.
+        </p>
+
+        </p>
     
 </body>
 </html>
